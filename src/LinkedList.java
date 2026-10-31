@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 class Node{
     int data;
     Node next;
@@ -76,6 +78,28 @@ public class LinkedList{
             temp = temp.next;
         }
         temp.next = null;
+    }
+    void delMid(int key){
+        if(head == null)
+        {
+            System.out.println("List is empty");
+            return;
+        }
+        if(key == 1)
+        {
+            head.next = head;
+            return;
+        }
+        Node temp = head;
+        for(int i = 1;i < key - 1 && temp.next != null;i++)
+        {
+            temp = temp.next;
+        }
+        if(temp.next == null)
+        {
+            System.out.println("Key not found");
+        }
+        temp.next = temp.next.next;
     }
 
 }
