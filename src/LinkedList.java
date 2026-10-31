@@ -20,4 +20,23 @@ public class LinkedList{
           newnode.next = head;
           head = newnode;
     }
+    void addMid(int d, int key){
+        Node newNode = new Node(d);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        while(temp.data != key && temp.next != null)
+        {
+            temp=temp.next;
+        }
+        if(temp.data == key){
+            newNode.next = temp.next;
+            temp.next = newNode;
+        }
+        else{
+            System.out.println("Key not found");
+        }
+    }
 }
