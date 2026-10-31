@@ -39,4 +39,43 @@ public class LinkedList{
             System.out.println("Key not found");
         }
     }
+    void addLast(int d){
+        Node newNode = new Node(d);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        Node temp = head;
+        while(temp.next != null){
+            temp=temp.next;
+        }
+        temp.next = newNode;
+    }
+    void delFirst(){
+        if(head == null)
+        {
+            System.out.println("List is empty");
+            return;
+        }
+        head = head.next;
+    }
+    void delLast(){
+        if(head == null)
+        {
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = head;
+        if(head.next == null)
+        {
+            head = null;
+            return;
+        }
+        while(temp.next.next != null )
+        {
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
 }
