@@ -85,11 +85,6 @@ public class LinkedList{
             System.out.println("List is empty");
             return;
         }
-        if(key == 1)
-        {
-            head = head.next;
-            return;
-        }
         Node temp = head;
         for(int i = 1;i < key - 1 && temp.next != null;i++)
         {
